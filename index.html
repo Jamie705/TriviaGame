@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Trivia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/css_reset.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Passion+One|Roboto|Slackey" rel="stylesheet">
+
+    </head>
+
+    <body>
+        
+    <!-- Start page Title and statr button-->
+    <div class="startpage">
+    <h1>Trivia Game</h1>
+        <button id="startBtn">Start Game </button>
+    </div>
+    <!-- wrapper for instructions & score board-->
+    <div id="trivia">    
+    <h2 class="Score" >Time Remaining: <span id="timer"></span></h2>
+
+            <!-- Score board -->
+        <div class="Score">
+            <p id="wrongAnswer">Incorrectly Answered: 0</p>
+            <p id="correctAnswer">Correctly Answered: 0</p>
+            <p id="notAnswered">Not Answered: 0</p>
+        </div>
+        
+        <div id="instructions">
+            <p>You'll create a trivia form with multiple choice or true/false options (your choice). The player will have a limited amount
+            of time to finish the quiz. The game ends when the time runs out. The page will reveal the number of questions that players
+            answer correctly and incorrectly. Don't let the player pick more than one answer per question. Don't forget to include a
+            countdown timer..</p>  
+        </div>
+    </div>
+
+            <!-- Questions -->
+        <div class="questions">
+            <div class="questions" id="q1">Question1
+                <p class="radio" id="radio1">Radio button goes here</p>
+            </div>
+            <div class="questions" id="q2">Question2
+                <p class="radio" id="radio2">Radio button goes here</p>
+            </div>
+            <div class="questions" id="q3">Question3
+                <p class="radio" id="radio3">Radio button goes here</p>
+            </div>
+            <div class="questions" id="q4">Question4
+                <p class="radio" id="radio4">Radio button goes here</p>
+            </div>
+            <div class="questions" id="q5">Question5
+                <p class="radio" id="radio5">Radio button goes here</p>
+            </div>
+           
+        </div>      
+        
+
+    <!-- ====================================================================== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+    </body>
+    </html>
