@@ -1,6 +1,6 @@
 // alert("something");
-document.addEventListener("DOMContentLoaded", function (event) {
-  console.log("DOM fully loaded and parsed");
+// document.addEventListener("DOMContentLoaded", function (event) {
+//   console.log("DOM fully loaded and parsed");
 
 // Creating variables to hold the questions and answers in an object
 var questions = [
@@ -42,20 +42,25 @@ var unanswered = 0;
 var timer = 0;
 //set interval that runs the stopwatch
 var intervalId = 0;
-
+var radioAnswers = []
   
 function showQuestions(params) {
+    $("#submit").append(radioAnswers.push);
+    
     for (var i = 0; i < questions.length; i++) {
-    questionsList = questions[i]
-    console.log("This is: " + questionsList);
+    questionsList = questions[i];
+    console.log("This is the questionlist: " + questions[i]);
+    
     // Then prepend the questions to the top of our question div.
     $("#quest").append("<br><hr>" + questionsList.question + "<br>" +
-      //create radio buttons for all the options.
-      questionsList.options.a +
-      '<label><input type="radio" name=:"' + questionsList.question.length + '" value="' + questionsList.options.a + '" /></label>' + "<br>" +
-      questionsList.options.b +
-      '<label><input type="radio" name=:"' + questionsList.question.length + '" value="' + questionsList.options.b + '" /></label>' + "<br>" + "Answer = " +
-      questionsList.answer);
+        
+    //create radio buttons for all the options.
+      // questionsList.options.a +
+      '<label>True<input type="radio" name=:"' + questionsList.question.length + '" value="' + questionsList.options.a + '" /></label>' + "<br>" +
+      // questionsList.options.b +
+      '<label>False<input type="radio" name=:"' + questionsList.question.length + '" value="' + questionsList.options.b + '" /></label>' + "<br>" +
+      //login answers
+      "Answer = " + questionsList.answer);
   }
 }
 
@@ -96,46 +101,22 @@ var clockRunning = false;
 
 function startTimer () {
     timer = 60;
-    $("#timer").text("00:60");
+    $("#timer").text("60");
         if (!clockRunning){
         intervalId = setInterval(count, 1000);
         clockRunning = true;
+      
         }    
-        //set timer to stopp when it reaches 0
-        // else {
-        // (timer === 0)
-        // stop();
-        // }
-}
-
-
-//set timer to stop
-function stop() {
-  clearInterval(intervalId);
-  console.log("stopping");
 }
 
 function count() {
   timer--;
-  var converted = timeConverter(timer);
-  $("#timer").text(converted);
+  $("#timer").text(timer);
+  //set timer to stopp when it reaches 0  
+  if (timer === 0) {
+    clearInterval(intervalId);
+    console.log("Time is up");
+  }
 }
 
-//Math function coverts timer 00:00
-function timeConverter(t) {
-  var minutes = Math.floor(t / 60);
-  var seconds = t - (minutes * 60);
-
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-  if (minutes === 0) {
-    minutes = "00";
-  }
-  else if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-  return minutes + ":" + seconds;
-}
-
-});
+// });
