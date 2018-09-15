@@ -1,48 +1,39 @@
 body {
     /*! display: inline-block; */
-    background-color: gray;
-     font-family: 'Passion One', cursive,Arial, Helvetica, sans-serif;
+    background-image:url("../images/FootballFeild01.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Passion One', cursive,Arial, Helvetica, sans-serif;
+    color: blanchedalmond;
     font-size: 30px;
     margin: 2% 3%;
 }
 
-h2,.Score, #instructions {
+h2, h1, .Score, #instructions {
     font-family:'Roboto', cursive,Arial, Helvetica, sans-serif;
-    background-color: black;
-    border: 4px solid yellow;
-    border-radius: 25px 25px;
+    background-color: rgba(172, 74, 9, 0.76);
+    border: 6px solid  white;
+    border-radius: 5px 5px;
     color: blanchedalmond;
-    padding: 15px;
-    margin: 20px auto;
+    padding: 10px;
+    margin: 15px auto;
+    
 }
 
+h1 {
+    text-align: center;
+    letter-spacing: 8px;
+}
 .Score{
     display: none;
 }
 
 #instructions {
-    font-size: 22px;
+    font-size: 20px;
 }
-h1 {
-    font-family:'Slackey', cursive,Arial, Helvetica, sans-serif;
-    background-color: black;
-    border: 4px solid yellow;
-    border-radius: 60px 15px;
-    color: blanchedalmond;
+
+
+#quest{
+    margin: 0 auto;
     padding: 15px;
-    font-size: 40px;
     text-align: center;
-}
-
-#Banana {
-    border-radius: 25px 25px;
-    color: blanchedalmond;
-    padding-right: 40px;
-    width: 600px;
-    margin: 20px auto;
-    float: left;
-}
-
-.minions {
-    margin: 20px;
 }

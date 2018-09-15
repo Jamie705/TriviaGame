@@ -6,35 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="assets/javascript/app.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/css_reset.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
         <link href="https://fonts.googleapis.com/css?family=Passion+One|Roboto|Slackey" rel="stylesheet">
-
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
     </head>
 
     <body>
         
     <!-- Start page Title and statr button-->
     <div class="startpage">
-    <h1>Trivia Game</h1>
-        <button id="startBtn">Start Game </button>
+    <h1><img src="assets/images/footballClipart.png" width="50px"><img src="assets/images/footballClipart.png" width="50px"> Football Trivia<img src="assets/images/footballClipart.png" width="50px"><img src="assets/images/footballClipart.png" width="50px"></h1>
+        
     </div>
     <!-- wrapper for instructions & score board-->
-    <div id="trivia">    
-    <h2 class="timeHeader" >Time Remaining: <span id="timer"></span></h2>
-
-            <!-- Score board -->
+    <div id="trivia" class="container col-12">    
+    
+    <!-- Score board -->
         <div class="Score">
-            <p id="wrongAnswer">Incorrectly Answered: 0</p>
-            <p id="correctAnswer">Correctly Answered: 0</p>
+            <p id="wrongAnswers">Incorrectly Answered: 0</p>
+            <p id="correctAnswers">Correctly Answered: 0</p>
         </div>
-        
+                
         <div id="instructions">
             <p>You'll create a trivia form with multiple choice or true/false options (your choice). The player will have a limited amount
             of time to finish the quiz. The game ends when the time runs out. The page will reveal the number of questions that players
             answer correctly and incorrectly. Don't let the player pick more than one answer per question. Don't forget to include a
             countdown timer.</p>  
         </div>
+        <h2 class="timeHeader">Time Remaining: <span id="timer"></span></h2>
+
+        <button id="startBtn" type="button" class="btn btn-primary btn-lg btn-block">Let's Play!</button>
     </div>
 
             <!-- Questions -->
@@ -46,5 +48,10 @@
     <!-- ====================================================================== -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="assets/javascript/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+
     </body>
     </html>

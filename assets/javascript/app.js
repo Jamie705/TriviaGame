@@ -53,8 +53,9 @@ function showQuestions(params) {
     console.log("This is the question list: " + questionsList.question);
     
     // Then prepend the questions to the top of our question div.
+      
     $("#quest").prepend("<br><hr>" + questionsList.question + "<br>" +
-        
+     
     //create radio buttons for all the options.
       // questionsList.options.a +
       '<form><label>True<input type="radio" name=:"' + questionsList.question + '" value="' + questionsList.options.a + '" /></label>' + "<br>" +
@@ -68,12 +69,12 @@ function showQuestions(params) {
          //submit button to generate answers and add them to array or compare to correct answers
         $("#quest").append('<button id=:"submitBtn">Submit</button>'); 
         
-        $("button").click(function () {
+        $("input").click(function () {
             $("input[name='questionsList.question']:checked")        
             radioAnswers.push($("input").val());
             console.log(radioAnswers.length + radioAnswers);
           // check if answer given === the answer in object. and push ++ the count of right answers up.
-            //will use function elsify
+            elsify();
             //append answers in the page reveals number of questions that were answered correctly
             $("#score").css("display", "block");
         });
@@ -81,11 +82,12 @@ function showQuestions(params) {
 
 //total array answers minus- correctAnswers = Wrong answer
 wrongAnswers = arrAnswers.length - correctAnswers.length;
+correctAnswers = []; //radioAnswers compared to array answers
 
 //function to insert else if statments
   function elsify (params) {
     //length of answers for both guessed correclty and answer array means all answers were correct
-    if (radioAnswer.length === arrAnswers.length) {
+    if (radioAnswers.length === arrAnswers.length) {
       console.log("You got them all right")
       //should equal same amount of questions right
       correctAnswers = question.length;
@@ -93,8 +95,8 @@ wrongAnswers = arrAnswers.length - correctAnswers.length;
       $('#correctAnswer').text("Correct Answers: " + correctAnswers);
       } 
       //compare how many radio answers were correct and update
-    else if (radioAnswer.length != arrAnswers.length){
-      //show correct answers
+    else if (radioAnswers.length != arrAnswers.length || clockRunning === false){
+      //show all answers correct and wrong
       console.log("Answered Correctly: " + correctAnswers.length)
       console.log("Inorrectly Answered: " + wrongAnswers)
       $('#correctAnswer').text("Correct Answers: " + correctAnswers.length);
@@ -143,6 +145,7 @@ function count() {
   if (timer === 0) {
     clearInterval(intervalId);
     console.log("Time is up");
+    clockRunning = false;
   }
 }
 
