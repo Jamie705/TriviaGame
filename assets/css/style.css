@@ -5,7 +5,7 @@ body {
     font-family: 'Passion One', cursive,Arial, Helvetica, sans-serif;
     color: blanchedalmond;
     font-size: 30px;
-    margin: 2% 3%;
+    margin: 3% 2%;
 }
 
 h2, h1, #score, #instructions {
@@ -21,6 +21,9 @@ h2, h1, #score, #instructions {
 h1 {
     text-align: center;
     letter-spacing: 8px;
+    margin:15px;
+    color: black;
+
 }
 /* hide at start of page, on click display */
 #score, #restartBtn {
@@ -38,4 +41,9 @@ h1 {
     padding: 15px;
     text-align: center;
     display: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -2px black;
+    word-spacing: 5px;
+}
+input[type="radio"]{
+  margin: 0 10px;
 }

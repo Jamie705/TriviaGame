@@ -1,5 +1,5 @@
 // alert("something");
-// $(document).ready(function () {
+$(document).ready(function () {
 
 // Creating variables to hold the questions and answers in an object
 var footballList = [
@@ -94,14 +94,11 @@ function restart(params) {
 
   });
 }
-// function getAnswers(param)
+//function to check the answers/
 //*****************Get Answers***************************** */
-    //create click event, on button, only displays 1 answer on all it displays
-    $("#results").click(function () {
-      //show scoreboard
-      finishDisplay();
 
-       //for loop to issue questions & radio buttons did not work
+function checkAnswers (params) {
+         //for loop to issue questions & radio buttons did not work
       $('input[name= "q1"]:checked');
       radioAnswers.push($('input[name= "q1"]:checked').val());
       console.log("q1: " + radioAnswers);
@@ -172,8 +169,14 @@ function restart(params) {
         clockRunning = false;
         $("#timer").text("00");
 
+}  
+    //create click event, on button, only displays 1 answer on all it displays
+    $("#results").click(function () {
+      //show scoreboard
+      finishDisplay();
+      checkAnswers();
+
     });
-   
 // prevents the clock from being sped up unnecessarily
 //***************TIMER***************
 var clockRunning = false;
@@ -196,8 +199,11 @@ function count() {
     console.log("Time is up");
     clockRunning = false;
     $("#score").css("display", "block");
+    //if clock runs out check answers given and set final display
+    checkAnswers();
+    finishDisplay();
 
   }
 }
 
-// });
+});
